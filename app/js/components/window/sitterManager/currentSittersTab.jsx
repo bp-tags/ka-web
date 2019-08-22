@@ -1,6 +1,7 @@
 'use strict';
 
 var React               = require('react');
+var Reflux              = require('reflux');
 var _                   = require('lodash');
 var vex                 = require('js/vex');
 
@@ -8,11 +9,8 @@ var EmpireRPCActions    = require('js/actions/rpc/empire');
 
 var SitterListItem      = require('js/components/window/sitterManager/sitterListItem');
 
-var CurrentSittersTab = React.createClass({
 
-    propTypes : {
-        sitters : React.PropTypes.array
-    },
+var CurrentSittersTab = React.createClass({
 
     handleReauthorizeAll : function() {
         EmpireRPCActions.requestEmpireRPCAuthorizeSitters({ revalidate_all : true });
@@ -21,9 +19,7 @@ var CurrentSittersTab = React.createClass({
     handleDeauthorizeAll : function() {
         vex.confirm(
             "Are you sure you want to revoke everyone's access to your empire?",
-            _.partial(EmpireRPCActions.requestEmpireRPCDeauthorizeSitters, {
-                deauthorize_all : true
-            })
+            _.partial(EmpireRPCActions.requestEmpireRPCDeauthorizeSitters, { deauthorize_all : true } )
         );
     },
 

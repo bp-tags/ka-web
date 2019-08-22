@@ -13,9 +13,10 @@ TheftTrainingRPCActions.requestTheftTrainingRPCView.listen(function(o) {
         method  : 'view',
         params  : [o],
         success : 'successTheftTrainingRPCView',
-        error   : 'failureTheftTrainingRPCView'
+        error   : 'failureTheftTrainingRPCView' 
     });
 });
 TheftTrainingRPCActions.successTheftTrainingRPCView.listen(function(result) {
     BuildingWindowActions.buildingWindowUpdate(result);
 });
+

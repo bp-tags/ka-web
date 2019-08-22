@@ -15,6 +15,5 @@ module.exports = function() {
         console.log('Passed!');
     } else {
         console.log(output);
-        process.exit(1);
     }
 };

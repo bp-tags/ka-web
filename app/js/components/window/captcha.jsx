@@ -2,12 +2,16 @@
 
 var React                   = require('react');
 var Reflux                  = require('reflux');
+var _                       = require('lodash');
 
 var CaptchaWindowActions    = require('js/actions/windows/captcha');
 var WindowManagerActions    = require('js/actions/windowManager');
 var CaptchaRPCActions       = require('js/actions/rpc/captcha');
 
+var WindowActions           = require('js/actions/window');
+
 var CaptchaRPCStore         = require('js/stores/rpc/captcha');
+var clone                   = require('js/util').clone;
 
 var Captcha = React.createClass({
     statics : {
@@ -39,6 +43,12 @@ var Captcha = React.createClass({
         }
     },
 
+
+
+
+
+
+
     componentDidUpdate : function(prevProps, prevState) {
         if (prevState.captchaRPCStore.url !== this.state.captchaRPCStore.url) {
             this.clearSolutionField();
@@ -59,10 +69,10 @@ var Captcha = React.createClass({
 
     onClickSolve : function() {
         var solution = this.refs.solution.value;
-
+        
         CaptchaRPCActions.requestCaptchaRPCSolve({
-            guid     : this.state.captchaRPCStore.guid,
-            solution : solution
+            guid        : this.state.captchaRPCStore.guid, 
+            solution    : solution
         });
     },
 
@@ -79,6 +89,11 @@ var Captcha = React.createClass({
     clearSolutionField : function() {
         this.refs.solution.value = '';
     },
+
+
+
+
+
 
     render : function() {
         return (

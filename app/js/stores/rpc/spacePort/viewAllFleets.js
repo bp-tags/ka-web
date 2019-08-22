@@ -1,6 +1,7 @@
 'use strict';
 
 var Reflux                  = require('reflux');
+var _                       = require('lodash');
 var util                    = require('js/util');
 
 var SpacePortRPCActions     = require('js/actions/rpc/spacePort');
@@ -20,7 +21,7 @@ var ViewAllFleetsSpacePortRPCStore = Reflux.createStore({
 
     getDefaultData : function() {
         var state = {
-            fleets           : [],
+            fleets : [],
             number_of_fleets : 0
         };
         return state;
@@ -29,7 +30,7 @@ var ViewAllFleetsSpacePortRPCStore = Reflux.createStore({
     handleNewData : function(result) {
         var state = clone(this.state);
 
-        state.fleets            = result.fleets;
+        state.fleets            = result.fleets ;
         state.number_of_fleets  = result.number_of_fleets * 1;
 
         this.emit(state);
@@ -37,7 +38,8 @@ var ViewAllFleetsSpacePortRPCStore = Reflux.createStore({
 
     onSuccessSpacePortRPCViewAllFleets : function(result) {
         this.handleNewData(result);
-    }
-});
+    },
 
+});
+    
 module.exports = ViewAllFleetsSpacePortRPCStore;

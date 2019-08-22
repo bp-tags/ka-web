@@ -1,32 +1,27 @@
 'use strict';
 
-var React         = require('react');
-var Draggable     = require('react-draggable');
-var $             = require('js/shims/jquery');
+var React           = require('react');
+var Draggable       = require('react-draggable');
+var $               = require('js/shims/jquery');
 
-var PanelHeader   = require('js/components/window/panel/panelHeader');
-var PanelContent  = require('js/components/window/panel/panelContent');
+var PanelHeader     = require('js/components/window/panel/panelHeader');
+var PanelContent    = require('js/components/window/panel/panelContent');
 
-var WindowActions = require('js/actions/window');
+var StatsRPCActions = require('js/actions/rpc/stats');
+var WindowActions   = require('js/actions/window');
+
+var Tabber          = require('js/components/tabber');
+var Tabs            = Tabber.Tabs;
+var Tab             = Tabber.Tab;
 
 var Panel = React.createClass({
-
-    propTypes : {
-        type    : React.PropTypes.string,
-        zIndex  : React.PropTypes.number,
-        options : React.PropTypes.object,
-        window  : React.PropTypes.object
-    },
 
     closeWindow : function() {
         WindowActions.windowCloseByType(this.props.type);
     },
 
     render : function() {
-        var subPanel = React.createElement(this.props.window, {
-            zIndex  : this.props.zIndex,
-            options : this.props.options
-        });
+        var subPanel = React.createElement(this.props.window, { zIndex : this.props.zIndex, options : this.props.options });
 
         return (
             <Draggable handle=".drag-handle" zIndex={this.props.zIndex}>
@@ -45,7 +40,8 @@ var Panel = React.createClass({
                         panelWidth={this.props.window.options.width}
                         panelHeight={this.props.window.options.height}
                     >
-                        {subPanel}
+                    {subPanel}
+
                     </PanelContent>
                 </div>
             </Draggable>

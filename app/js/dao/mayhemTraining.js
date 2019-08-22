@@ -14,9 +14,10 @@ MayhemTrainingRPCActions.requestMayhemTrainingRPCView.listen(function(o) {
         method  : 'view',
         params  : [o],
         success : 'successMayhemTrainingRPCView',
-        error   : 'failureMayhemTrainingRPCView'
+        error   : 'failureMayhemTrainingRPCView' 
     });
 });
 MayhemTrainingRPCActions.successMayhemTrainingRPCView.listen(function(result) {
     BuildingWindowActions.buildingWindowUpdate(result);
 });
+

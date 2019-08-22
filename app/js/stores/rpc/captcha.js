@@ -5,8 +5,12 @@ var StatefulMixinStore      = require('js/stores/mixins/stateful');
 
 var CaptchaWindowActions    = require('js/actions/windows/captcha');
 var CaptchaRPCActions       = require('js/actions/rpc/captcha');
+var WindowManagerActions    = require('js/actions/windowManager');
 var WindowsActions          = require('js/actions/window');
 
+var CaptchaWindow           = require('js/components/window/captcha');
+
+var server                  = require('js/server');
 var clone                   = require('js/util').clone;
 
 var CaptchaRPCStore = Reflux.createStore({
@@ -21,16 +25,17 @@ var CaptchaRPCStore = Reflux.createStore({
 
     getDefaultData : function() {
         return {
-            guid   : '',
-            url    : '',
-            solved : 0,
-            window : ''
+            guid    : '',
+            url     : '',
+            solved  : 0,
+            window  : ''
         };
     },
 
     onCaptchaWindowClear : function() {
         this.emit(this.getDefaultData());
     },
+
 
     onSuccessCaptchaRPCFetch : function(result) {
         var update = clone(this.state);

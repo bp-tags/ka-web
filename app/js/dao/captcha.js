@@ -1,5 +1,9 @@
 'use strict';
 
+var Reflux              = require('reflux');
+var Server              = require('js/server');
+var _                   = require('lodash');
+
 var CaptchaRPCActions   = require('js/actions/rpc/captcha');
 
 var dao                 = require('js/dao');
@@ -10,8 +14,8 @@ function makeCaptchaCall(options) {
 
 CaptchaRPCActions.requestCaptchaRPCFetch.listen(function(o) {
     makeCaptchaCall({
-        method  : 'fetch',
-        params  : [],
+        method : 'fetch',
+        params : [],
         success : 'successCaptchaRPCFetch',
         error   : 'failureCaptchaRPCFetch'
     });
@@ -30,3 +34,4 @@ CaptchaRPCActions.requestCaptchaRPCSolve.listen(function(o) {
 });
 
 module.exports = CaptchaRPCActions;
+

@@ -21,18 +21,16 @@ var SitterManagerWindow = React.createClass({
 
     statics : {
         options : {
-            title  : 'Manage Sitters',
-            width  : 450,
-            height : 400
+            title   : 'Manage Sitters',
+            width   : 450,
+            height  : 400
         }
     },
 
     render : function() {
         return (
             <Tabs>
-                <Tab title="Current Sitters" onSelect={
-                    EmpireRPCActions.requestEmpireRPCViewAuthorizedSitters
-                }>
+                <Tab title="Current Sitters" onSelect={ EmpireRPCActions.requestEmpireRPCViewAuthorizedSitters }>
                     <CurrentSittersTab sitters={this.state.sitters} />
                 </Tab>
 

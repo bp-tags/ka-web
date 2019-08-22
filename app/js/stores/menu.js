@@ -22,7 +22,7 @@ var MenuStore = Reflux.createStore({
     },
 
     getInitialState : function() {
-        if (!this.state) {
+        if (! this.state) {
             this.state = this.getDefaultData();
         }
         return this.state;
@@ -47,7 +47,8 @@ var MenuStore = Reflux.createStore({
 
     onSuccessEmpireRPCLogout : function() {
         this.show(false);
-    }
+    },
 });
+
 
 module.exports = MenuStore;

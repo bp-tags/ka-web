@@ -14,9 +14,10 @@ PoliticsTrainingRPCActions.requestPoliticsTrainingRPCView.listen(function(o) {
         method  : 'view',
         params  : [o],
         success : 'successPoliticsTrainingRPCView',
-        error   : 'failurePoliticsTrainingRPCView'
+        error   : 'failurePoliticsTrainingRPCView' 
     });
 });
 PoliticsTrainingRPCActions.successPoliticsTrainingRPCView.listen(function(result) {
     BuildingWindowActions.buildingWindowUpdate(result);
 });
+

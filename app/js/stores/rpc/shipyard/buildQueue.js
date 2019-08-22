@@ -1,6 +1,7 @@
 'use strict';
 
 var Reflux                  = require('reflux');
+var _                       = require('lodash');
 var $                       = require('js/shims/jquery');
 var util                    = require('js/util');
 
@@ -21,10 +22,10 @@ var BuildQueueShipyardRPCStore = Reflux.createStore({
 
     getDefaultData : function() {
         var state = {
-            number_of_ships_building  : 0,
-            number_of_fleets_building : 0,
-            cost_to_subsidize         : 0,
-            fleets_building           : []
+            number_of_ships_building    : 0,
+            number_of_fleets_building   : 0,
+            cost_to_subsidize           : 0,
+            fleets_building             : [],
         };
         return state;
     },
@@ -42,7 +43,8 @@ var BuildQueueShipyardRPCStore = Reflux.createStore({
 
     onSuccessShipyardRPCViewBuildQueue : function(result) {
         this.handleNewData(result);
-    }
-});
+    },
 
+});
+    
 module.exports = BuildQueueShipyardRPCStore;

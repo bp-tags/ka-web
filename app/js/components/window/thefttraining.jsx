@@ -3,7 +3,8 @@
 var React                   = require('react');
 var Reflux                  = require('reflux');
 
-var GenericBuildingStore    = require('js/stores/genericBuilding');
+var GenericBuildingStore    = require('js/stores/genericBuilding.js');
+var BodyRPCStore            = require('js/stores/rpc/body');
 
 var WindowActions           = require('js/actions/window');
 var BuildingWindowActions   = require('js/actions/windows/building');
@@ -12,31 +13,25 @@ var TheftTrainingRPCActions = require('js/actions/rpc/theftTraining');
 var StandardTabs            = require('js/components/window/building/standardTabs');
 var BuildingInformation     = require('js/components/window/building/information');
 var SpyTrainingStatus       = require('js/components/window/spyTraining/spyTrainingStatus');
-
 var Tabber                  = require('js/components/tabber');
+
 var Tabs                    = Tabber.Tabs;
 var Tab                     = Tabber.Tab;
 
 var TheftTraining = React.createClass({
     statics : {
         options : {
-            title  : 'Theft Training',
-            width  : 700,
-            height : 420
+            title   : 'Theft Training',
+            width   : 700,
+            height  : 420
         }
     },
-
-    propTypes : {
-        options : React.PropTypes.object
-    },
-
     mixins : [
-        Reflux.connect(GenericBuildingStore, 'genericBuildingStore')
+        Reflux.connect(GenericBuildingStore, 'genericBuildingStore'),
     ],
-
     componentWillMount : function() {
         BuildingWindowActions.buildingWindowClear();
-        TheftTrainingRPCActions.requestTheftTrainingRPCView(this.props.options.id);
+        TheftTrainingRPCActions.requestTheftTrainingRPCView( this.props.options.id );
     },
 
     closeWindow : function() {
@@ -50,9 +45,9 @@ var TheftTraining = React.createClass({
             tabs.push(
                 <Tab title="Spy Training" key="Spy Training">
                     <SpyTrainingStatus
-                        inTraining={building.extraViewData.spies.in_training}
-                        pointsPerHour={building.extraViewData.spies.points_per}
-                        maxPoints={building.extraViewData.spies.max_points}
+                        inTraining      = {building.extraViewData.spies.in_training}
+                        pointsPerHour   = {building.extraViewData.spies.points_per}
+                        maxPoints       = {building.extraViewData.spies.max_points}
                     />
                 </Tab>
             );

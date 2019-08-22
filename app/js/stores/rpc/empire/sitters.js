@@ -5,6 +5,7 @@ var Reflux                      = require('reflux');
 var _                           = require('lodash');
 var moment                      = require('moment');
 var util                        = require('js/util');
+var server                      = require('js/server');
 
 var StatefulMixinStore          = require('js/stores/mixins/stateful');
 
@@ -65,7 +66,7 @@ var SittersEmpireRPCStore = Reflux.createStore({
     onSuccessEmpireRPCAuthorizeSitters : function(result) {
         this.handleNewSitters(result);
     },
-
+    
     onSuccessEmpireRPCDeauthorizeSitters : function(result) {
         this.handleNewSitters(result);
     }

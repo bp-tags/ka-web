@@ -1,16 +1,16 @@
 'use strict';
 
-var Reflux              = require('reflux');
-var _                   = require('lodash');
-var util                = require('js/util');
+var Reflux                  = require('reflux');
+var _                       = require('lodash');
+var util                    = require('js/util');
 
-var TickerActions       = require('js/actions/ticker');
-var EmpireRPCActions    = require('js/actions/rpc/empire');
+var TickerActions           = require('js/actions/ticker');
+var EmpireRPCActions        = require('js/actions/rpc/empire');
 
-var StatefulMixinsStore = require('js/stores/mixins/stateful');
-var ServerRPCStore      = require('js/stores/rpc/server');
+var StatefulMixinsStore     = require('js/stores/mixins/stateful');
+var ServerRPCStore          = require('js/stores/rpc/server');
 
-var clone               = util.clone;
+var clone                   = util.clone;
 
 var BOOST_TYPES = [
     'food',
@@ -48,11 +48,8 @@ var BoostsEmpireRPCStore = Reflux.createStore({
 
     handleNewBoost : function(timestamp) {
         var millisecondsRemaining =
-            util.serverDateToMoment(timestamp) -
-            ServerRPCStore.getData().serverMoment;
-
-        console.log(timestamp);
-        console.log(millisecondsRemaining);
+            util.serverDateToMs(timestamp) -
+            util.serverDateToMs(ServerRPCStore.getData().time);
 
         if (timestamp && millisecondsRemaining > 0) {
             return {
@@ -97,13 +94,17 @@ var BoostsEmpireRPCStore = Reflux.createStore({
         this.emit(boosts);
     },
 
-    onSuccessEmpireRPCGetBoosts : function(result) {
+    onSuccessEmpireRPCViewBoosts : function(result) {
         this.handleNewBoosts(result);
     },
 
     onSuccessEmpireRPCBoost : function(result) {
         this.handleNewBoosts(result);
-    }
-});
+    },
 
+    onFailureEmpireRPCBoost : function(result) {
+        console.log('FAILURE Empire Boost');
+    },
+});
+    
 module.exports = BoostsEmpireRPCStore;

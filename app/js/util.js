@@ -1,10 +1,8 @@
 'use strict';
 
-var moment    = require('moment');
-var $         = require('js/shims/jquery');
-var _         = require('lodash');
-
-var constants = require('js/constants');
+var moment = require('moment');
+var $      = require('js/shims/jquery');
+var _      = require('lodash');
 
 var xPad = function(x, pad, r) {
     if (typeof r === 'undefined') {
@@ -104,19 +102,7 @@ module.exports.formatMillisecondTime = function(ms) {
 };
 
 module.exports.serverDateToMoment = function(str) {
-    // There are currently two date formats beig used by the server.
-    // This is to handle that.
-
-    var usingOldFormat = moment(str, constants.OLD_SERVER_DATE_FORMAT);
-    var usingNewFormat = moment(str, constants.NEW_SERVER_DATE_FORMAT);
-
-    if (usingNewFormat.isValid()) {
-        return usingNewFormat;
-    } else if (usingOldFormat.isVaid()) {
-        return usingOldFormat;
-    } else {
-        console.error('Cannot parse server date: ' + str);
-    }
+    return moment(str, 'DD MM YYYY HH:mm:ss ZZ');
 };
 
 module.exports.formatMomentLong = function(theMoment) {
