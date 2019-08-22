@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
-    <title>Keno Antigen</title>
+    <title>Lacuna Expanse</title>
 
-    <link rel="stylesheet" type="text/css" href="app/vendor-css/yui-reset.css" />
-
-    <link rel="stylesheet" type="text/css" href="app/vendor-css/semantic.css" />
-
-    <link rel="stylesheet" type="text/css" href="app/vendor-css/vex.css" />
-    <link rel="stylesheet" type="text/css" href="app/vendor-css/vex-theme-default.css" />
-
-    <link rel="stylesheet" type="text/css" href="build/styles.css" />
+    <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/yui/2.8.1/build/reset-fonts-grids/reset-fonts-grids.css" />
+    <link rel="stylesheet" type="text/css" href="lacuna/styles.css" />
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
@@ -24,28 +17,24 @@
     </div>
 
     <script id="noJsScript" type="text/javascript">
-        (function() {
+        (function(){
             // Remove no script notice.
-            var nojs = document.getElementById('nojavascript');
-
+            var nojs = document.getElementById("nojavascript");
             if (nojs) {
                 nojs.parentNode.removeChild(nojs);
             }
-
-            // Remove this script node as well.
-            var njs = document.getElementById('noJsScript');
+            // Remove script node as well.
+            var njs = document.getElementById("noJsScript");
             njs.parentNode.removeChild(njs);
         })();
     </script>
 
-    <script type="text/javascript" src="app/vendor-js/jquery.js"></script>
-    <script type="text/javascript" src="app/vendor-js/semantic.js"></script>
-    <script type="text/javascript" src="app/vendor-js/vex.js"></script>
-    <script type="text/javascript" src="app/vendor-js/vex.dialog.js"></script>
+    <script type="text/javascript">
+        window.lacuna_s3_base_url = '//d16cbq0l6kkf21.cloudfront.net/';
+        window.lacuna_server_url = 'http://prime.lacunaexpanse.com/';
+    </script>
 
-    <script type="text/javascript" src="app/vendor-js/yui2/build/yuiloader/yuiloader.js"></script>
-
-    <script type="text/javascript" src="build/bundle.js"></script>
-
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/yui/2.8.1/build/yuiloader/yuiloader-min.js"></script>
+    <script type="text/javascript" src="lacuna/load.js"></script>
 </body>
 </html>
