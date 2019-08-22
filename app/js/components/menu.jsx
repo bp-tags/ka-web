@@ -9,6 +9,8 @@ var BottomBar          = require('js/components/menu/bottomBar');
 var LeftSidebarButton  = require('js/components/menu/leftSidebarButton');
 var RightSidebarButton = require('js/components/menu/rightSidebarButton');
 
+var Chat               = require('js/components/menu/chat');
+
 var Loader             = require('js/components/menu/loader');
 
 var MenuStore          = require('js/stores/menu');
@@ -25,10 +27,12 @@ var Menu = React.createClass({
                     <RightSidebarButton />
                     <TopBar />
 
+                    { /* More stuff for integrating with React */ }
                     <div id="oldYUIPanelContainer"></div>
 
                     <Loader />
                     <BottomBar />
+                    <Chat />
                 </div>
             );
         } else {

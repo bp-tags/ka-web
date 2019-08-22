@@ -5,7 +5,7 @@ var vex                 = require('js/vex');
 var EmpireRPCActions    = require('js/actions/rpc/empire');
 
 function makeEmpireCall(options) {
-    dao.makeServerCall('empire', options, EmpireRPCActions);
+        dao.makeServerCall('empire', options, EmpireRPCActions);
 }
 
 EmpireRPCActions.requestEmpireRPCLogout.listen(function(o) {
@@ -13,7 +13,7 @@ EmpireRPCActions.requestEmpireRPCLogout.listen(function(o) {
         method  : 'logout',
         params  : {},
         success : 'successEmpireRPCLogout',
-        error   : 'failureEmpireRPCLogout'
+        error   : 'failureEmpireRPCLogout' 
     });
 });
 
@@ -22,7 +22,7 @@ EmpireRPCActions.requestEmpireRPCViewBoosts.listen(function(o) {
         method  : 'view_boosts',
         params  : [],
         success : 'successEmpireRPCViewBoosts',
-        error   : 'failureEmpireRPCViewBoosts'
+        error   : 'failureEmpireRPCViewBoosts' 
     });
 });
 
@@ -128,4 +128,6 @@ EmpireRPCActions.successEmpireRPCInviteFriend.listen(function(result) {
     vex.alert('Success - your friend has been sent an invite email.');
 });
 
+
 module.exports = EmpireRPCActions;
+

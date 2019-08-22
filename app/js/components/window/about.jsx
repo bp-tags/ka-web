@@ -1,6 +1,7 @@
 'use strict';
 
 var React           = require('react');
+var Draggable       = require('react-draggable');
 
 var AboutTab        = require('js/components/window/about/aboutTab');
 var CreditsTab      = require('js/components/window/about/creditsTab');
