@@ -12,6 +12,8 @@ var SpacePortRPCActions      = require('js/actions/rpc/spacePort');
 
 var StandardTabs            = require('js/components/window/building/standardTabs');
 var BuildingInformation     = require('js/components/window/building/information');
+var SpacePortOwnFleetsTab   = require('js/components/window/spacePort/ownFleetsTab');
+
 var Tabber                  = require('js/components/tabber');
 
 var Tabs                    = Tabber.Tabs;
@@ -40,16 +42,12 @@ var SpacePort = React.createClass({
 
     render : function() {
         var building = this.state.genericBuildingStore;
-        var tabs = StandardTabs.tabs(this.props.options, this.state.bodyStore, building);
+        var tabs = StandardTabs.tabs(this.props.options, building);
         tabs.push(
-            <Tab title="Own Fleets" key="Own Fleets" onSelect={ _.partial(SpacePortRPCActions.requestSpacePortRPCView, building.id ) }>
-                <p>Not Yet Implemented! This will show the colonies own ships.</p>
-                <p>All the colonies own fleets</p>
-                <p>All the colonies travelling fleets</p>
-                <p>All excavators (deployed)</p>
-                <p>All mining platforms (deployed)</p>
-                <p>Fleets can be filtered by tag ('Trade','War', etc.)</p>
-                <p>Fleets can be scuttled or cancelled</p>
+            <Tab title="Own Fleets" key="Own Fleets" onSelect={ 
+              _.partial(SpacePortRPCActions.requestSpacePortRPCViewAllFleets,  building.id ) 
+            }>
+              <SpacePortOwnFleetsTab />
             </Tab>
         );
         

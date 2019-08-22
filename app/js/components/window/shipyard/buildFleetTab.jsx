@@ -7,12 +7,12 @@ var _                               = require('lodash');
 var ShipyardRPCActions              = require('js/actions/rpc/shipyard');
 var GetBuildableShipyardRPCStore    = require('js/stores/rpc/shipyard/getBuildable');
 
-var BuildFleetItem                  = require('js/components/window/shipyard/buildFleetItem');
+var BuildFleetItem                  = require('js/components/window/shipyard/buildFleet/item');
 
-var BuildFleet = React.createClass({
+var BuildFleetTab = React.createClass({
 
     propTypes : {
-        buildingId :  React.PropTypes.number.isRequired
+        //buildingId :  React.PropTypes.number.isRequired
     },
 
     getInitialState : function() {
@@ -78,6 +78,7 @@ var BuildFleet = React.createClass({
                   obj =         {buildable[fleetTypes[i]] } 
                   buildingId =  {this.props.buildingId}
                   autoSelect =  {this.state.autoSelect}
+                  cost       =  {1}
                 />
             );
         }
@@ -124,4 +125,4 @@ var BuildFleet = React.createClass({
     }
 });
 
-module.exports = BuildFleet;
+module.exports = BuildFleetTab;
