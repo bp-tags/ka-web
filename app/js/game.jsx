@@ -13,11 +13,9 @@ var SessionActions      = require('js/actions/session');
 var TickerActions       = require('js/actions/ticker');
 var UserActions         = require('js/actions/user');
 var WindowActions       = require('js/actions/window');
-var EmpireRPCActions    = require('js/actions/rpc/empire');
 
 var GameWindow          = require('js/components/gameWindow');
 var Captcha             = require('js/components/window/captcha');
-var SurveyWindow        = require('js/components/window/survey');
 
 var BodyRPCStore        = require('js/stores/rpc/body');
 
@@ -44,8 +42,8 @@ if (typeof YAHOO.lacuna.Game === 'undefined' || !YAHOO.lacuna.Game) {
 
             Start : function(query) {
                 var l = window.location;
-                Game.RPCBase = window.lacuna_server_url;
-                Game.domain = l.hostname || 'lacunaexpanse.com';
+                Game.RPCBase = window.lacuna_rpc_base_url || l.protocol + '//' + l.host + '/';
+                Game.domain = l.hostname || '192.168.0.37';
 
                 // This is some glue code to make the server, body and empire stores listen for changes.
                 // Normally, React Components should do this automatically, but since we need these
@@ -55,6 +53,12 @@ if (typeof YAHOO.lacuna.Game === 'undefined' || !YAHOO.lacuna.Game) {
                 require('js/stores/ticker').listen(_.noop);
 
                 var body = document.getElementById('body');
+
+                // Blow out YUI-related HTML that is created by the React stuff.
+                body.removeChild(document.getElementById('footer'));
+                body.removeChild(document.getElementById('header'));
+                body.removeChild(document.getElementById('content'));
+                body.removeChild(document.getElementById('pulsing'));
 
                 // Give the React stuff somewhere to go.
                 var container = document.createElement('div');
@@ -252,7 +256,7 @@ if (typeof YAHOO.lacuna.Game === 'undefined' || !YAHOO.lacuna.Game) {
 
                 SessionActions.sessionSet(Game.GetSession(''));
                 UserActions.userSignIn();
-                EmpireRPCActions.requestEmpireRPCGetSurvey();
+
             },
             InitEvents : function() {
                 // make sure we only subscribe once

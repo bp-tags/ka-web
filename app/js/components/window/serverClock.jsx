@@ -3,6 +3,8 @@
 var React           = require('react');
 var Reflux          = require('reflux');
 
+var Draggable       = require('react-draggable');
+
 var StatsRPCActions = require('js/actions/rpc/stats');
 var WindowActions   = require('js/actions/window');
 
