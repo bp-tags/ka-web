@@ -3,10 +3,9 @@
 var Reflux = require('reflux');
 
 var RightSidebarActions = Reflux.createActions([
-    'rightSidebarShow',
-    'rightSidebarHide',
-    'rightSidebarCollapse',
-    'rightSidebarExpand'
+    'toggle',
+    'collapseAccordion',
+    'expandAccordion'
 ]);
 
 module.exports = RightSidebarActions;
