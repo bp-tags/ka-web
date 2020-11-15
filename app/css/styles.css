@@ -5,7 +5,7 @@ light blue: #52ACFF
 */
 
 html {
-	background: black url('//192.168.0.37:8080/assets/star_system/field.png');
+	background: black url('//192.168.0.17:8080/assets/star_system/field.png');
 	color:#fff;
 	overflow: hidden;
 	box-sizing: content-box;
@@ -46,7 +46,7 @@ button, input[type="submit"], input[type="button"], .button {
 	border-style: solid;
 	border-width: 1px;
 	border-color: #fefefe #dedede #dedede #fefefe;
-	background: #103070 url("//192.168.0.37:8080/assets/ui/web/bar_bottom_back.png") 0 -10px;
+	background: #103070 url("//192.168.0.17:8080/assets/ui/web/bar_bottom_back.png") 0 -10px;
 	color: #ffffff;
 }
 button:hover:active, input[type="submit"]:hover:active, input[type="button"]:hover:active, .button:hover:active {
@@ -96,12 +96,12 @@ button[disabled], input[type="submit"][disabled], input[type="button"][disabled]
 #header {
 	top: 0;
 	z-index:1000;
-	background-image:url("//192.168.0.37:8080/assets/ui/web/bar_top_back.png");
+	background-image:url("//192.168.0.17:8080/assets/ui/web/bar_top_back.png");
 }
 #footer {
 	bottom: 0;
 	z-index:1000;
-	background-image:url("//192.168.0.37:8080/assets/ui/web/bar_bottom_back.png");
+	background-image:url("//192.168.0.17:8080/assets/ui/web/bar_bottom_back.png");
 }
 
 .hidden {
@@ -124,7 +124,7 @@ body.yui-skin-sam .yui-panel {
 }
 body.yui-skin-sam .yui-panel .hd {
 	width:250px;
-	background:url("//192.168.0.37:8080/assets/ui/tab.png") no-repeat scroll 0 0 transparent;
+	background:url("//192.168.0.17:8080/assets/ui/tab.png") no-repeat scroll 0 0 transparent;
 	border-width:0;
 	margin-left:10px;
 	font-size:110%;
@@ -133,7 +133,7 @@ body.yui-skin-sam .yui-panel .hd {
 }
 
 .yui-skin-sam .yui-panel .bd, .yui-skin-sam .yui-panel .ft {
-	background-image:url("//192.168.0.37:8080/assets/ui/bkg.png");
+	background-image:url("//192.168.0.17:8080/assets/ui/bkg.png");
 }
 body.yui-skin-sam .yui-panel .bd {
 	-moz-border-radius:10px 10px 0 0;
