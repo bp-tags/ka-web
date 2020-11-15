@@ -162,7 +162,7 @@ body.yui-skin-sam .nofooter .bd {
 	border-color:#000;
 }
 body.yui-skin-sam .container-close {
-	background:url("//192.168.0.37:8080/assets/ui/close.png") no-repeat scroll 0 0 transparent;
+	background:url("//192.168.0.17:8080/assets/ui/close.png") no-repeat scroll 0 0 transparent;
 	cursor:pointer;
 	height:23px;
 	position:absolute;
@@ -525,7 +525,7 @@ body.yui-skin-sam .yui-pg-container .yui-pg-current-page {
     zoom:1; /*force ie layout so we can use the display:inline below*/
     *display:inline; /*ie hack to make it think this is an inline-block*/
 	position: relative;
-	background: url("//192.168.0.37:8080/assets/ui/tickbar.png") -11px 5px no-repeat;
+	background: url("//192.168.0.17:8080/assets/ui/tickbar.png") -11px 5px no-repeat;
 	height: 28px;
 	width: 198px;
 	top: 5px;
@@ -745,10 +745,10 @@ Info dialogs for Empire and Alliance
 	color:white;
 }
 .planetMapTileActionButton {
-	background: transparent url('//192.168.0.37:8080/assets/ui/l/build.png');
+	background: transparent url('//192.168.0.17:8080/assets/ui/l/build.png');
 }
 .plots-full .planetMapTileActionButton {
-	background: transparent url('//192.168.0.37:8080/assets/ui/l/build-no.png');
+	background: transparent url('//192.168.0.17:8080/assets/ui/l/build-no.png');
 }
 
 .tileContainer .tile50  div.planetMapTileCounter {
@@ -771,14 +771,14 @@ Info dialogs for Empire and Alliance
 	font-size:180%;
 }
 .tile50 .planetMapTileActionButton {
-	background: transparent url('//192.168.0.37:8080/assets/ui/s/build.png');
+	background: transparent url('//192.168.0.17:8080/assets/ui/s/build.png');
 }
 .plots-full .tile50 .planetMapTileActionButton {
-	background: transparent url('//192.168.0.37:8080/assets/ui/s/build-no.png');
+	background: transparent url('//192.168.0.17:8080/assets/ui/s/build-no.png');
 }
 
 .mapiator_zoom {
-	background: url(//192.168.0.37:8080/assets/ui/zoom.png);
+	background: url(//192.168.0.17:8080/assets/ui/zoom.png);
 	background-position: -20px -60px;
 	position:absolute;
 	z-index:30;
@@ -1263,7 +1263,7 @@ div.archaeologyGlyphContainer div.archaeologyGlyphHeader {
 	position:relative;
 }
 .stashItem .stashDelete, .tradeItem .tradeDelete, .distribContainers .reserveDelete {
-	background:url("//192.168.0.37:8080/assets/ui/close.png") no-repeat scroll center center transparent;
+	background:url("//192.168.0.17:8080/assets/ui/close.png") no-repeat scroll center center transparent;
 	height:11px;
 	width:11px;
 	position: absolute;
@@ -1342,7 +1342,7 @@ div.archaeologyGlyphContainer div.archaeologyGlyphHeader {
 	cursor:pointer;
 }
 .probeStar .probeDelete {
-	background:url("//192.168.0.37:8080/assets/ui/close.png") no-repeat scroll center center transparent;
+	background:url("//192.168.0.17:8080/assets/ui/close.png") no-repeat scroll center center transparent;
 	height:11px;
 	width:11px;
 	position: absolute;
@@ -1373,7 +1373,7 @@ div.archaeologyGlyphContainer div.archaeologyGlyphHeader {
 	width:100px;
 	font-weight:bold;
 	font-size:100%;
-	cursor:url(//192.168.0.37:8080/assets/ui/web/pen_m.cur), text;
+	cursor:url(//192.168.0.17:8080/assets/ui/web/pen_m.cur), text;
 }
 .spyInfo .spyName input {
 	width:95px;
@@ -1867,7 +1867,7 @@ TextboxList
     padding:0 15px 0 2px;
 }
 .TextboxList .TextboxListBitBoxDelete {
-    background:transparent url(//192.168.0.37:8080/assets/ui/crosssmall.gif) repeat scroll 0 0;
+    background:transparent url(//192.168.0.17:8080/assets/ui/crosssmall.gif) repeat scroll 0 0;
     display:block;
     font-size:1px;
     height:7px;
@@ -1896,7 +1896,7 @@ TextboxList
     top:1px;
     #top:2px;
     position:absolute;
-    background:transparent url(//192.168.0.37:8080/assets/ui/dropdown.gif) repeat scroll 0 0;
+    background:transparent url(//192.168.0.17:8080/assets/ui/dropdown.gif) repeat scroll 0 0;
     z-index:2;
     display:-moz-inline-stack; /*mozilla 2.0*/
     display:inline-block; /*mozilla 3.0, ie 8*/
@@ -1922,7 +1922,7 @@ TextboxList
 @import url('https://cdnjs.cloudflare.com/ajax/libs/pnotify/2.0.0/pnotify.all.min.css');
 
 /* The fact that we're using US1 *might* be bad here. */
-@import url('http://192.168.0.37:8000/chiselchat/chiselchat.min.css');
+@import url('http://192.168.0.17:8000/chiselchat/chiselchat.min.css');
 
 
 /* Semantic overrides everything in this file and manages to not make a mess. Except for this... */
