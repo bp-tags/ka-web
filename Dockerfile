@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:6.0.0
 
 RUN echo "1.7"
 COPY ${PWD}/package.json /src/package.json
